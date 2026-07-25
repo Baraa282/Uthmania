@@ -83,19 +83,11 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @font-face {
-            font-family: 'Thmanyah Serif';
-            src: url('thmanyahseriftext-Regular.otf') format('opentype');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Thmanyah Serif', 'Amiri', serif;
+            font-family: 'Amiri', serif;
         }
 
         body {
@@ -116,8 +108,8 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
+            padding: 32px 40px 48px;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             position: relative;
@@ -143,17 +135,24 @@
         }
 
         .section {
-            margin: 30px 0;
-            padding: 20px;
-            background: #fff;
-            border-radius: 10px;
+            margin: 0 0 28px;
+            padding: 24px 0 28px;
+            background: transparent;
+            border-radius: 0;
+            border-bottom: 1px solid rgba(224, 122, 95, 0.25);
             opacity: 0;
             transform: translateY(50px);
             transition: all 0.6s ease-in-out, background 0.5s ease;
         }
 
+        .section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
         body.night-mode .section {
-            background: #2d3348;
+            background: transparent;
+            border-bottom-color: rgba(129, 178, 154, 0.25);
         }
 
         .section.visible {
@@ -193,7 +192,7 @@
         }
 
         p {
-            font-size: 1.2rem;
+            font-size: 1.3125rem;
             text-align: justify;
             transition: font-size 0.3s ease;
         }
@@ -1148,9 +1147,9 @@
             body { padding-top: 90px; }
             h1 { font-size: 1.8rem; }
             h2 { font-size: 1.5rem; }
-            p { font-size: 1rem; }
-            .container { padding: 15px; }
-            .section { padding: 15px; }
+            p { font-size: 1.15rem; }
+            .container { padding: 20px 18px 32px; }
+            .section { padding: 18px 0 22px; }
             .header { padding: 0 15px; height: 70px; gap: 10px; }
             .logo-image { height: 50px; }
             .nav-menu-logo { height: 50px; max-width: 120px; }
@@ -1228,7 +1227,7 @@
             }
         }
     </style>
-
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
@@ -2579,7 +2578,7 @@
         const decreaseFontBtn = document.getElementById('decrease-font');
         const paragraphs = document.querySelectorAll('p:not(.footer-text), .hadith-text:not(.nav-menu-footer .hadith-text), .nav-link-item span');
 
-        let fontSize = 1.2;
+        let fontSize = 1.3125;
 
         increaseFontBtn.addEventListener('click', () => {
             if (fontSize < 1.8) {
